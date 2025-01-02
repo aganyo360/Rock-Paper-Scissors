@@ -17,20 +17,67 @@
 //     alert("I don't know you")
 // }
 
-let username = +prompt("Who is this")
+// let username = prompt("Who is this")
 
-if(username === "Master"){
-    let pass = +prompt("Enter Password")
-    if(pass === "Tusker01")
-        alert("Welcome, Successful Login")
+// if(username === "Master"){
+//     let pass = prompt("Enter Password")
+//     if(pass === "Tusker01")
+//         // alert("Welcome, Successful Login")
+//         alert(`Welcome, ${username.split(1,4)}`)
 
-    else if( pass ==="" || pass === null){
-        alert("Cancelled")
-    }
-    else{
-        alert("wrong password")
-    }}
+//     else if( pass ==="" || pass === null){
+//         alert("Cancelled")
+//     }
+//     else{
+//         alert("wrong password")
+//     }}
 
-else{
-    alert("User doesn't exist")
-    }
+// else if(username === "" || username === null){
+//     alert("Cancelled")
+// }
+// else{
+//     alert("User doesn't exist")
+//     }
+
+
+// function troubleshooting() {
+// 	const a = 1;
+// 	const b = 1;
+
+// 	let result;
+
+// 	// Edit between these lines
+// 	// =================================
+// 	result = a + b
+
+// 	// =================================
+
+// 	return result;
+// }
+
+// // Do not change this 
+
+//     console.log(troubleshooting()); // Should print "ab"
+ 
+// number = Number(prompt("enter a number"))
+
+// function numberChecker() {
+// 	if(number => 10) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+
+// console.log(numberChecker()); // Should print "true"
+
+
+
+// const a = 1+8
+// const b = 22*3
+// const c =5%4
+// const d = a-17
+// const e = a+b+c+d
+// console.log(a, b, c, d, e)
+
+let

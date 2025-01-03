@@ -69,7 +69,7 @@
 // 	}
 // }
 
-// console.log(numberChecker()); // Should print "true"
+console.log(numberChecker()); // Should print "true"
 
 
 

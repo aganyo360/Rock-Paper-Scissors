@@ -62,14 +62,14 @@
 // number = Number(prompt("enter a number"))
 
 // function numberChecker() {
-	if(number => 10) {
-		return true;
-	} else {
-		return false;
-	}
-// }
+// 	if(number => 10) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// // }
 
-console.log(numberChecker()); // Should print "true"
+// console.log(numberChecker()); // Should print "true"
 
 
 
@@ -79,5 +79,16 @@ console.log(numberChecker()); // Should print "true"
 // const d = a-17
 // const e = a+b+c+d
 // console.log(a, b, c, d, e)
-
-let
+let value;
+value  = Number(prompt("Enter a number"))
+// console.log(typeof value)
+function isEven(){
+	if(+(value%=2) == 0){
+		alert(`${value} number is Even` )
+	}
+	else{
+		alert(`${value}Number is odd`)
+	}
+	console.log(value)
+}
+isEven()

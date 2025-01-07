@@ -79,16 +79,66 @@
 // const d = a-17
 // const e = a+b+c+d
 // console.log(a, b, c, d, e)
-let value;
-value  = Number(prompt("Enter a number"))
-// console.log(typeof value)
-function isEven(){
-	if(+(value%=2) == 0){
-		alert(`${value} number is Even` )
+// let value;
+// value  = Number(prompt("Enter a number"))
+// // console.log(typeof value)
+// function isEven(){
+// 	if(+(value%=2) == 0){
+// 		alert(`${value} number is Even` )
+// 	}
+// 	else{
+// 		alert(`${value}Number is odd`)
+// 	}
+// 	console.log(value)
+// }
+// isEven()
+
+
+
+
+
+
+
+
+
+
+let humanScore=0;
+let computerScore=0;
+let randomValue = Math.random()
+function getComputerChoice(){
+	if(randomValue<0.33){
+		return "Rock"
+	}
+	else if(randomValue>0.33 && randomValue<0.66){
+		return "paper"
 	}
 	else{
-		alert(`${value}Number is odd`)
+		return "scissors"
 	}
-	console.log(value)
+
 }
-isEven()
+
+function getHumanChoice(){
+	let humanChoice = prompt("Enter your choice :")
+	return humanChoice
+}
+
+// console.log(getHumanChoice())
+
+function playRound(getComputerChoice, getHumanChoice){
+	if(getComputerChoice == getHumanChoice){
+		return "play again"
+	}
+}
+console.log(playRound())
+
+
+
+
+
+
+
+
+
+
+

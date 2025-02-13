@@ -1,144 +1,102 @@
-// let userName = String(prompt("Who's there?"))
+// get computer input
 
-// if (userName === "Admin"){
-//     if(String(prompt("Password?")) == "TheMaster"){
-//         alert("Welcome!")
-//     } 
-//     else if (prompt("Password?") === null){
-//         alert("Canceled")
-//     } else {
-//         alert("Wrong password")
-//     }
-// }
-// else if (userName === "" || userName === null){
-//     alert("Canceled")
-// }
-// else {
-//     alert("I don't know you")
-// }
-
-// let username = prompt("Who is this")
-
-// if(username === "Master"){
-//     let pass = prompt("Enter Password")
-//     if(pass === "Tusker01")
-//         // alert("Welcome, Successful Login")
-//         alert(`Welcome, ${username.split(1,4)}`)
-
-//     else if( pass ==="" || pass === null){
-//         alert("Cancelled")
-//     }
-//     else{
-//         alert("wrong password")
-//     }}
-
-// else if(username === "" || username === null){
-//     alert("Cancelled")
-// }
-// else{
-//     alert("User doesn't exist")
-//     }
-
-
-// function troubleshooting() {
-// 	const a = 1;
-// 	const b = 1;
-
-// 	let result;
-
-// 	// Edit between these lines
-// 	// =================================
-// 	result = a + b
-
-// 	// =================================
-
-// 	return result;
-// }
-
-// // Do not change this 
-
-//     console.log(troubleshooting()); // Should print "ab"
- 
-// number = Number(prompt("enter a number"))
-
-// function numberChecker() {
-// 	if(number => 10) {
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// // }
-
-// console.log(numberChecker()); // Should print "true"
-
-
-
-// const a = 1+8
-// const b = 22*3
-// const c =5%4
-// const d = a-17
-// const e = a+b+c+d
-// console.log(a, b, c, d, e)
-// let value;
-// value  = Number(prompt("Enter a number"))
-// // console.log(typeof value)
-// function isEven(){
-// 	if(+(value%=2) == 0){
-// 		alert(`${value} number is Even` )
-// 	}
-// 	else{
-// 		alert(`${value}Number is odd`)
-// 	}
-// 	console.log(value)
-// }
-// isEven()
-
-
-
-
-
-
-
-
-
-
-let humanScore=0;
-let computerScore=0;
-let randomValue = Math.random()
-function getComputerChoice(){
-	if(randomValue<0.33){
-		return "Rock"
-	}
-	else if(randomValue>0.33 && randomValue<0.66){
-		return "paper"
-	}
-	else{
-		return "scissors"
-	}
-
+let getComputerChoice = ()=>{
+    let randomPick = Math.random()*3;
+    if(randomPick<1){
+        return "rock".toUpperCase()
+    }
+    else if(randomPick >1 && randomPick< 2){
+        return "paper".toUpperCase()
+    }
+    else if(randomPick>= 2){
+        return "scissors".toUpperCase()
+    }
 }
+// get human choice
 
-function getHumanChoice(){
-	let humanChoice = prompt("Enter your choice :")
-	return humanChoice
+let getHumanChoice=()=>{
+    let humanPick= prompt("Choose a selection: ")
+    
+    if(humanPick===null || humanPick.trim()==="" ){
+        alert("You didn't make a choice");
+        return null
+    }
+    humanPick = humanPick.toUpperCase()
+   if(humanPick === "ROCK" || humanPick==="PAPER" || humanPick=="SCISSORS"){
+        return humanPick;
+    }
+    
+    else{
+        alert("Invalid Choice Pick Rock or Scissors")
+        return null;
+    }
+    
+};
+// getHumanChoice()
+
+let playRound = (humanChoice,computerChoice)=>{
+  
+
+   // lets now set the logic to who will win the round
+
+   if(humanChoice===computerChoice){
+        console.log(`it's draw ${humanChoice} and ${computerChoice} are equal`)
+        return "draw"
+   }
+
+   else if(
+    (humanChoice==="ROCK" && computerChoice==="SCISSORS") ||
+    (humanChoice==="PAPER" && computerChoice==="ROCK")||
+    (humanChoice==="SCISSORS" && computerChoice==="PAPER")
+   ){
+    console.log(`You win ${humanChoice} beats ${computerChoice}`)
+    return "human"
+   }
+   else{
+    console.log(`You lose ${computerChoice} beats ${humanChoice}`)
+    return "computer"
+   }
+
+
+
+}  
+
+
+let playGame =()=>{
+    let computerScore=0
+    let humanScore =0
+    for(let round= 1; round<6; round++){
+
+        let humanChoice=getHumanChoice()
+        let computerChoice=getComputerChoice()
+        
+        if(humanChoice===null){
+            console.log("Invalid input. Skipping Round")
+            continue;
+        }
+        
+        console.log(`Round ${round} you chose ${humanChoice}, Computer chose ${computerChoice}`)
+        let scores =playRound(humanChoice, computerChoice)
+        
+        if(scores==="human"){
+            humanScore++
+        }
+        else if(scores==="computer"){
+            computerScore++
+        }
+        
+        console.log(`Current Score: YOU: ${humanScore} 
+            computer: ${computerScore}`)
+        
+    }
+    if(humanScore> computerScore){
+        console.log(`Yown won by ${humanScore} Points`)
+    }
+    else if(humanScore==computerScore){
+        console.log("its a draw")
+    }
+    else{
+        console.log("computer wins by "+ computerScore)
+    }
 }
-
-// console.log(getHumanChoice())
-
-function playRound(getComputerChoice, getHumanChoice){
-	if(getComputerChoice == getHumanChoice){
-		return "play again"
-	}
-}
-console.log(playRound())
-
-
-
-
-
-
-
-
-
-
-
+playGame()

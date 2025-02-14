@@ -99,4 +99,16 @@ let playGame =()=>{
         console.log("computer wins by "+ computerScore)
     }
 }
-playGame()
+
+let btnPlayGame = document.querySelector('#btn-playGame')
+btnPlayGame.addEventListener("click", ()=>{
+    playGame()
+})
+
+let rockSelection = document.querySelector(".rock")
+let paperSelection = document.querySelector('.paper')
+let scissorsSelection = document.querySelector('.scissors')
+rockSelection=rockSelection.value
+paperSelection= paperSelection.value
+scissorsSelection = scissorsSelection.value
+console.log(rockSelection)

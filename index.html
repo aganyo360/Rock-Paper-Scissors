@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>RockPaper</title>
 </head>
@@ -16,8 +16,19 @@
 <h4>Start by clicking the f12 button to open Developer toools
     and Navigate on the console sections
 </h4>
-<h5>
+<h5> 
     Enjoy the Game:
+
+    <div class="container">
+        <button id="btn-playGame">Play Game</button>
+
+        <h6>Pick one of the following choice</h6>
+        <div class="btn-Wrapper">
+            <button class="rock" value="ROCK">rock</button>
+            <button class="paper" value="PAPER">paper</button>
+            <button class="scissors"value="SCISSORS">scissors</button>
+        </div>
+    </div>
 </h5>
 </body>
 </html>
